@@ -18,8 +18,13 @@ namespace CSharpDay3
             //ForLoop();
             //ForeachLoop();
             //BreakContinue();
-            //ArrayTest();
-            MultiArray();
+            ArrayTest();
+
+            /*var prog = new Program();
+            /*var result = prog.test("Hello world");
+            Console.WriteLine(result);#1#
+            var result = prog.Data("Aye Chan Aung Thwin");
+            Console.WriteLine(result);*/
         }
 
         public static void StringTest()
@@ -182,11 +187,16 @@ namespace CSharpDay3
 
         public static void ArrayTest()
         {
-            int[] nums = { 2, 23, 4, 45, 23 };
+            int[] nums = { 2, 21, 4, 45, 23 };
             
             Array.Sort(nums);
 
-            for (int i = 0; i < nums.Length; i++)
+            /*for (int i = 0; i < nums.Length; i++)
+            {
+                Console.WriteLine(nums[i]);
+            }*/
+            
+            for (int i = nums.Length-1; i >= 0; i--)
             {
                 Console.WriteLine(nums[i]);
             }
@@ -220,6 +230,32 @@ namespace CSharpDay3
                     Console.WriteLine(numbers[i,j]);
                 }
             }
+        }
+
+        public String test(string val)
+        {
+            return val;
+        }
+
+        public String Data(string name)
+        {
+            return $"Name is : {name}";
+        }
+
+        public String Data(string name, int age)
+        {
+            if (age == 0) return $"Name is : {name} and age is unknown.";
+            return $"{Data(name)} and age is {age}.";
+        }
+
+        public int addition(int a, int b)
+        {
+            return a + b;
+        }
+
+        public double addition(double a, double b)
+        {
+            return a + b;
         }
     }
 }
