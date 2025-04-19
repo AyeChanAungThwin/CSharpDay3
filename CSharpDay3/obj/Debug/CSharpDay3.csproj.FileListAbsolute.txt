@@ -1,0 +1,6 @@
+E:\ACAT\CSharpDay3\CSharpDay3\bin\Debug\CSharpDay3.exe
+E:\ACAT\CSharpDay3\CSharpDay3\bin\Debug\CSharpDay3.pdb
+E:\ACAT\CSharpDay3\CSharpDay3\obj\Debug\CSharpDay3.csproj.AssemblyReference.cache
+E:\ACAT\CSharpDay3\CSharpDay3\obj\Debug\CSharpDay3.csproj.CoreCompileInputs.cache
+E:\ACAT\CSharpDay3\CSharpDay3\obj\Debug\CSharpDay3.exe
+E:\ACAT\CSharpDay3\CSharpDay3\obj\Debug\CSharpDay3.pdb
