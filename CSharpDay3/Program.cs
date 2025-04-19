@@ -25,6 +25,9 @@ namespace CSharpDay3
             Console.WriteLine(result);#1#
             var result = prog.Data("Aye Chan Aung Thwin");
             Console.WriteLine(result);*/
+
+            var car = new Car();
+            car.drive();
         }
 
         public static void StringTest()
@@ -252,7 +255,7 @@ namespace CSharpDay3
         {
             return a + b;
         }
-
+        
         public double addition(double a, double b)
         {
             return a + b;
