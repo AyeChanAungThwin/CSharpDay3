@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -30,13 +31,30 @@ namespace CSharpDay3
             car.drive();*/
             
             //OOP();
-            
-            Weeks[] weeks = { Weeks.SUNDAY , Weeks.MONDAY };
 
-            foreach (var day in weeks)
-            {
-                Console.WriteLine(day.ToString().ToLower());
-            }
+            var tShirt = new Product("T-shirt", Color.Black, Size.L, "HushPuppy");
+            var trouser = new Product("Trouser", Color.White, Size.S, "Uniclo");
+            var pants = new Product("Short Pants", Color.Green, Size.M, "H&M");
+            var purse = new Product("Purse", Color.Black, Size.XL, "LV");
+
+            var productList = new List<Product>();
+            productList.Add(tShirt);
+            productList.Add(trouser);
+            productList.Add(pants);
+            productList.Add(purse);
+
+            var productFilter = new ProductFilter();
+            //productFilter.filter(productList, Color.Black);
+            
+            //productFilter.filter(productList, Size.S);
+            //productFilter.filter(productList, new ColorPredicate(Color.Black));
+            //productFilter.filter(productList, new SizePredicate(Size.M));
+            productFilter.filter(productList, new ColorAndSizePredicate(
+                    Color.White,
+                    Size.S
+                )
+            );
+            
         }
 
         public static void OOP()
@@ -93,12 +111,24 @@ namespace CSharpDay3
             USB keyboard = new Keyboard();
             USB mouse = new Mouse();
 
+            
+            //enum
             USB[] devices = { keyboard, mouse };
 
             foreach (var usb in devices)
             {
                 Console.WriteLine(usb.getName());
             }
+            
+            //Operator overloading
+            var p1 = new Point(1, 2);
+            var p2 = new Point(2, 4);
+
+            //p2 = -p1;
+            //p2.show();
+
+            var p3 = p1 + p2;
+            p3.show();
         }
 
         public static void StringTest()
