@@ -18,7 +18,7 @@ namespace CSharpDay3
             //ForLoop();
             //ForeachLoop();
             //BreakContinue();
-            ArrayTest();
+            //ArrayTest();
 
             /*var prog = new Program();
             /*var result = prog.test("Hello world");
@@ -26,8 +26,79 @@ namespace CSharpDay3
             var result = prog.Data("Aye Chan Aung Thwin");
             Console.WriteLine(result);*/
 
-            var car = new Car();
-            car.drive();
+            /*var car = new Car();
+            car.drive();*/
+            
+            //OOP();
+            
+            Weeks[] weeks = { Weeks.SUNDAY , Weeks.MONDAY };
+
+            foreach (var day in weeks)
+            {
+                Console.WriteLine(day.ToString().ToLower());
+            }
+        }
+
+        public static void OOP()
+        {
+            var volvo = new Car();
+            volvo.Name = "Volvo";
+            volvo.Gas = true;
+            volvo.drive(true);
+            
+            var honda = new Car();
+            honda.drive(true);
+            
+            //Encapsulation
+            var prn = new Person();
+            prn.setName("Aye Chan");
+            prn.setAge(-10);
+            prn.output();
+            
+            //inheritance and polymorphism
+            Animal common = new Animal();
+            common.greet();
+
+            Animal cat = new Cat();
+            cat.greet();
+
+            Animal dog = new Dog();
+            dog.greet();
+            
+            //abstraction
+            var obj1 = new Pierce<string>();
+            obj1.name = "Pencil";
+
+            var obj2 = new Punctured<string>();
+            obj2.name = "Apple";
+
+            var analysed = new AnalyseShape<string, string>(obj1, obj2);
+            analysed.result();
+            
+            //.Equals
+            var car1 = new Car();
+            car1.Name = "Volvo";
+            car1.Gas = true;
+            car1.drive(true);
+            
+            var car2 = new Car();
+            car2.Name = "Volvo";
+            car2.Gas = true;
+            car2.drive(true);
+            
+            Console.WriteLine(car1==car2);
+            Console.WriteLine(car1.Equals(car2));
+            
+            //interface - blueprints
+            USB keyboard = new Keyboard();
+            USB mouse = new Mouse();
+
+            USB[] devices = { keyboard, mouse };
+
+            foreach (var usb in devices)
+            {
+                Console.WriteLine(usb.getName());
+            }
         }
 
         public static void StringTest()
