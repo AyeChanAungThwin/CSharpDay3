@@ -22,7 +22,8 @@ namespace CSharpDay3
         {
             this.age = age;
             if (this.age < 0)
-                Console.WriteLine("Age cannot be less than 0");
+                throw new Exception("Age cannot be less than 0");
+            //Console.WriteLine("Age cannot be less than 0");
         }
 
         public int getAge()

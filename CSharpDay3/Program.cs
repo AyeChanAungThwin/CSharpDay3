@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Threading;
 
 namespace CSharpDay3
 {
@@ -31,7 +33,62 @@ namespace CSharpDay3
             car.drive();*/
             
             //OOP();
+            //Solid();
 
+            //File();
+
+            var list = new List<string>();
+            list.Add("A");
+            list.Add("B");
+            list.Add("C");
+            
+            list.ForEach(result => Console.WriteLine(result));
+
+            foreach (var result in list) Console.WriteLine(result);
+        }
+
+        /*public string output(string data)
+        {
+            return data;
+        }*/
+
+        public static void File()
+        {
+            var folder = @"C:\Users\User\Desktop\Test";
+
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+
+            var file = Path.Combine(folder, "test.txt");
+
+            if (!System.IO.File.Exists(file))
+            {
+                System.IO.File.Create(file);
+                Thread.Sleep(2000);
+            }
+
+            var boat = new Boat();
+            boat.Name = "soidjfl";
+            boat.age = 10;
+
+            var converter = new JsonUtils<Boat>();
+            var json = converter.toJson(boat);
+            var encryptedString = StringEncryptor.encrypt(json);
+            
+            System.IO.File.WriteAllText(file, encryptedString);
+
+            var data = System.IO.File.ReadAllText(file);
+            Console.WriteLine(data);
+
+            var obj = converter.toObj(StringEncryptor.decrypt(data));
+            Console.WriteLine(obj.Name);
+        }
+
+        public static void Solid()
+        {
+            //SRP, OCP
             var tShirt = new Product("T-shirt", Color.Black, Size.L, "HushPuppy");
             var trouser = new Product("Trouser", Color.White, Size.S, "Uniclo");
             var pants = new Product("Short Pants", Color.Green, Size.M, "H&M");
@@ -55,6 +112,35 @@ namespace CSharpDay3
                 )
             );
             
+            productFilter.filter(productList, new AndPredicate(
+                    new SizePredicate(Size.S),
+                    new ColorPredicate(Color.White)
+                )
+            );
+            
+            //LSP
+            var rectangle = new Rectangle();
+            rectangle.Width = 12;
+            rectangle.Length = 4;
+            Console.WriteLine(rectangle.Area());
+
+            var square = new Square();
+            square.Side = 12;
+            Console.WriteLine(square.Area());
+            
+            //ISP
+            var lion = new Lion();
+            lion.walk();
+
+            var fish = new Fish();
+            fish.swim();
+            
+            //DIP
+            var truck = new Truck(new Engine());
+            truck.startTheEngine();
+            truck.drive();
+            truck.stopTheEngine();
+            truck.drive();
         }
 
         public static void OOP()
