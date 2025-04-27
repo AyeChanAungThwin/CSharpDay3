@@ -37,6 +37,47 @@ namespace CSharpDay3
 
             //File();
 
+            //Lambda();
+            
+            //HashSetTest();
+
+            DictionaryTest();
+        }
+
+        public static void DictionaryTest()
+        {
+            var dictionary = new Dictionary<int, string>();
+            dictionary.Add(0, "Apple");
+            dictionary.Add(1, "Orange");
+            dictionary.Add(2, "Coconut");
+
+            foreach (var result in dictionary)
+            {
+                Console.WriteLine($"{result.Key}-{result.Value}");
+            }
+        }
+
+        public static void HashSetTest()
+        {
+            var list = new HashSet<Fruit>();
+            list.Add(new Fruit("Apple", "2 days"));
+            list.Add(new Fruit("Apple", "2 days"));
+            list.Add(new Fruit("Mangoes", "3 days"));
+
+            var fruit1 = new Fruit("Apple", "2 days");
+            var fruit2 = new Fruit("Apple", "2 days");
+            
+            Console.WriteLine(fruit1.Equals(fruit2));
+        }
+        
+
+        /*public static double square(double side)
+        {
+            return side * side;
+        }*/
+
+        public static void Lambda()
+        {
             var list = new List<string>();
             list.Add("A");
             list.Add("B");

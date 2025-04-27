@@ -88,6 +88,7 @@
         <Compile Include="Engine.cs" />
         <Compile Include="Filter.cs" />
         <Compile Include="Fish.cs" />
+        <Compile Include="Fruit.cs" />
         <Compile Include="IAbstractAnimal.cs" />
         <Compile Include="IAnimal.cs" />
         <Compile Include="IFly.cs" />
